@@ -92,17 +92,17 @@ public class Controlador implements ActionListener{
        case __RealizarPrestamo:
             int nuser =Integer.parseInt( vista.Numero_Usuario_Prestamo.getText());
             int nlib =Integer.parseInt( vista.Codigo_Libro_Prestamo.getText());
-            String finicio = vista.Fecha_Inicial_Prestamo.getText();
-            String plazo = vista.Plazo_Prestamo.getText();
        {
            try {
-               p.insertarPrestamo(nuser, nlib, finicio, plazo);
+               p.insertarPrestamo(nuser, nlib);
            } catch (SQLException ex) {
                Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
            }
        }
        this.vista.Table_Prestamos.setModel(p.listarPrestamos());
        this.vista.Table_Historico.setModel(p.listarHistorico());
+          this.vista.Table_Libros.setModel(libro.listarLibros());
+         this.vista.Table_Usuarios.setModel(usuario.listarUsuarios());
            break;
        case __DevolverLibro:
            id = Integer.parseInt(vista.ID_Devolver_Libro.getText());

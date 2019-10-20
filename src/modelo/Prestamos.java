@@ -31,13 +31,11 @@ public class Prestamos {
          cstmt.close();
         con.close();
 	}
-    public void insertarPrestamo(int nuser,int nlib,String finicio,String plazo) throws SQLException {
+    public void insertarPrestamo(int nuser,int nlib) throws SQLException {
 		con=Conexion.getConnection();
-		cstmt = con.prepareCall("{call INSERTAR_PRESTAMOS(?,?,?,?)}");
+		cstmt = con.prepareCall("{call INSERTAR_PRESTAMOS(?,?)}");
 		 cstmt.setInt(1, nuser);
 		 cstmt.setInt(2, nlib);
-		 cstmt.setString(3, finicio);
-		 cstmt.setString(4, plazo);
             cstmt.execute();
          cstmt.close();
         con.close();
