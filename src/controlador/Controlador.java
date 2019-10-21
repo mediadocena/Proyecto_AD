@@ -144,11 +144,21 @@ public class Controlador implements ActionListener{
        }
        this.vista.Table_Usuarios.setModel(usuario.listarUsuarios());
            break;
+       case __ActualizarLibro:
+               titulo = vista.Titulo_Libro.getText();
+               genero = vista.Genero_Libro.getText();
+               autor= vista.Autor_Libro.getText();
+               editor =  vista.Editor_Libro.getText();
+               clase= Integer.parseInt(vista.Clase_Libro.getText());
+              int codigo = Integer.parseInt(vista.ID_Borrar_Libro.getText());
+       
+           break;
+           
        }
     }
     
     public enum AccionMVC{
-    __InsertarUsuario,__InsertarLibro,__BorrarUsuario,__BorrarLibro,__RealizarPrestamo,__DevolverLibro,__PerdonarUsuario,__ActualizarUsuario
+    __InsertarUsuario,__InsertarLibro,__BorrarUsuario,__BorrarLibro,__RealizarPrestamo,__DevolverLibro,__PerdonarUsuario,__ActualizarUsuario,__ActualizarLibro
     
     }
     
@@ -196,6 +206,8 @@ public class Controlador implements ActionListener{
       this.vista.Actualizar_Usuario.setActionCommand("__ActualizarUsuario");
       this.vista.Actualizar_Usuario.addActionListener(this);
       
+      this.vista.Actualizar_Libros.setActionCommand("__ActualizarLibro");
+      this.vista.Actualizar_Libros.addActionListener(this);
       
     }
  

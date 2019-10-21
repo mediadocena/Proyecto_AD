@@ -71,7 +71,7 @@ public class Vista extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         Actualizar_id_Usuario = new javax.swing.JTextField();
         Actualizar_Usuario = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Actualizar_Libros = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -228,7 +228,7 @@ public class Vista extends javax.swing.JFrame {
 
         Actualizar_Usuario.setText("Actualizar");
 
-        jButton1.setText("jButton1");
+        Actualizar_Libros.setText("Actualizar");
 
         javax.swing.GroupLayout ContenedorLayout = new javax.swing.GroupLayout(Contenedor);
         Contenedor.setLayout(ContenedorLayout);
@@ -307,7 +307,7 @@ public class Vista extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addComponent(Borrar_Libro)
                                     .addComponent(ID_Borrar_Libro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1))
+                                    .addComponent(Actualizar_Libros))
                                 .addGap(63, 63, 63))))))
         );
         ContenedorLayout.setVerticalGroup(
@@ -397,7 +397,7 @@ public class Vista extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(Borrar_Libro)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)))
+                                .addComponent(Actualizar_Libros)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Editor_Libro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -481,6 +481,7 @@ public class Vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Actualizar_Libros;
     public javax.swing.JButton Actualizar_Usuario;
     public javax.swing.JTextField Actualizar_id_Usuario;
     public javax.swing.JTextField Autor_Libro;
@@ -510,7 +511,6 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JTable Table_Prestamos;
     public javax.swing.JTable Table_Usuarios;
     public javax.swing.JTextField Titulo_Libro;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
