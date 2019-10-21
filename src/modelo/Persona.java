@@ -58,6 +58,27 @@ public class Persona {
          cstmt.close();
         con.close();
     }
+    public void PerdonarUsuario(int id) throws SQLException{
+        con=Conexion.getConnection();
+		cstmt = con.prepareCall("{call PERDONAR_USUARIO(?)}");
+                cstmt.setInt(1, id);
+            cstmt.execute();
+         cstmt.close();
+        con.close();
+    }
+    public void ActualizarUsuario(int id,String nombre, String calle, String ciudad,int cod_post) throws SQLException {
+		con=Conexion.getConnection();
+		cstmt = con.prepareCall("{call ACTUALIZAR_USUARIOS(?,?,?,?,?,?)}");
+		 cstmt.setInt(1, id);
+		 cstmt.setString(2, nombre);
+		 cstmt.setString(3, calle);
+		 cstmt.setString(4, ciudad);
+                  cstmt.setInt(5,cod_post);
+                  cstmt.setInt(6,0);
+            cstmt.execute();
+         cstmt.close();
+        con.close();
+	}
     
     
 	public void insertarUsuario(String nombre, String calle, String ciudad,int cod_post) throws SQLException {

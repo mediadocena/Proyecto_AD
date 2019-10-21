@@ -118,11 +118,37 @@ public class Controlador implements ActionListener{
        this.vista.Table_Libros.setModel(libro.listarLibros());
          this.vista.Table_Usuarios.setModel(usuario.listarUsuarios());
            break;
+       case __PerdonarUsuario:
+           id = Integer.parseInt(this.vista.ID_Borrar_Usuario.getText());
+       {
+           try {
+               usuario.PerdonarUsuario(id);
+           } catch (SQLException ex) {
+               Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }
+        this.vista.Table_Usuarios.setModel(usuario.listarUsuarios());
+           break;
+       case __ActualizarUsuario:
+           id = Integer.parseInt(vista.Actualizar_id_Usuario.getText());
+           nombre = vista.Nombre_Usuario.getText();
+           ciudad = vista.Ciudad_Usuario.getText();
+           cod = Integer.parseInt(vista.CodPost_Usuario.getText());
+           calle =  vista.Calle_Usuario.getText();
+       {
+           try {
+               usuario.ActualizarUsuario(id, nombre, calle, ciudad, cod);
+           } catch (SQLException ex) {
+               Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }
+       this.vista.Table_Usuarios.setModel(usuario.listarUsuarios());
+           break;
        }
     }
     
     public enum AccionMVC{
-    __InsertarUsuario,__InsertarLibro,__BorrarUsuario,__BorrarLibro,__RealizarPrestamo,__DevolverLibro
+    __InsertarUsuario,__InsertarLibro,__BorrarUsuario,__BorrarLibro,__RealizarPrestamo,__DevolverLibro,__PerdonarUsuario,__ActualizarUsuario
     
     }
     
@@ -164,6 +190,11 @@ public class Controlador implements ActionListener{
       this.vista.Devolver_Libro.setActionCommand("__DevolverLibro");
       this.vista.Devolver_Libro.addActionListener(this);
       
+       this.vista.PERDONAR_USUARIO.setActionCommand("__PerdonarUsuario");
+      this.vista.PERDONAR_USUARIO.addActionListener(this);
+      
+      this.vista.Actualizar_Usuario.setActionCommand("__ActualizarUsuario");
+      this.vista.Actualizar_Usuario.addActionListener(this);
       
       
     }
