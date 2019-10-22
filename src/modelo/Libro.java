@@ -56,6 +56,22 @@ public class Libro {
         con.close();
         
     }
+//ID NUMBER,CLAS NUMBER,PRES NUMBER,GEN VARCHAR2,AUT VARCHAR2,TITUL VARCHAR2,EDITO VARCHAR2
+     public void ActualizarLibro(String titulo,String editor,String autor,String genero,int clase,int cod) throws SQLException{
+        con = Conexion.getConnection();
+        cstmt = con.prepareCall("{call ACTUALIZAR_LIBROS(?,?,?,?,?,?,?)}");
+        cstmt.setInt(1,cod);
+        cstmt.setInt(2,clase);
+        cstmt.setInt(3,0);
+        cstmt.setString(4,genero);
+        cstmt.setString(5,autor);
+        cstmt.setString(6,titulo);
+        cstmt.setString(7,editor);
+        cstmt.execute();
+        cstmt.close();
+        con.close();
+        
+    }
     public void BorrarLibro(int id) throws SQLException {
 		con=Conexion.getConnection();
 		cstmt = con.prepareCall("{call BORRAR_LIBROS(?)}");

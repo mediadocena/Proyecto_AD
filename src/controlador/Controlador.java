@@ -149,9 +149,17 @@ public class Controlador implements ActionListener{
                genero = vista.Genero_Libro.getText();
                autor= vista.Autor_Libro.getText();
                editor =  vista.Editor_Libro.getText();
-               clase= Integer.parseInt(vista.Clase_Libro.getText());
+               clase = Integer.parseInt(vista.Clase_Libro.getText());
               int codigo = Integer.parseInt(vista.ID_Borrar_Libro.getText());
-       
+       {
+           try {
+               ////ID NUMBER,CLAS NUMBER,PRES NUMBER,GEN VARCHAR2,AUT VARCHAR2,TITUL VARCHAR2,EDITO VARCHAR2
+               libro.ActualizarLibro(titulo,editor,autor,genero,codigo, clase);
+           } catch (SQLException ex) {
+               Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }
+           this.vista.Table_Libros.setModel(libro.listarLibros());
            break;
            
        }
